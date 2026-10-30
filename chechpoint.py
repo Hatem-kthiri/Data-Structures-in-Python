@@ -14,11 +14,21 @@ print("Question 1:", result)
 
 # Question 2: Sorting Tuples by the Last Element
 
-items = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
+my_list = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
 
-items.sort(key=lambda item: item[-1])
+result = []
 
-print("Question 2:", items)
+while my_list:
+    smallest = my_list[0]
+
+    for item in my_list:
+        if item[-1] < smallest[-1]:
+            smallest = item
+
+    result.append(smallest)
+    my_list.remove(smallest)
+
+print(result)
 
 
 # Question 3: Combining Dictionaries
@@ -48,15 +58,20 @@ print("Question 4:", squares)
 
 # Question 5: Sorting Tuples by a Float Value
 
-items = [
-    ('item1', '12.20'),
-    ('item2', '15.10'),
-    ('item3', '24.5')
-]
+list= [('item1', '12.20'), ('item2', '15.10'), ('item3', '24.5')]
 
-items.sort(key=lambda item: float(item[1]), reverse=True)
+result = []
 
-print("Question 5:", items)
+while list: 
+    largest = list[0]
+
+    for item in list:
+       if float(item[-1]) > float(largest[-1]):
+           largest = item
+
+    result.append(largest)
+    list.remove(largest)
+print(result)
 
 
 # Question 6: Creating a Set
